@@ -209,10 +209,10 @@ def load_images(img_names):
 
 def retrieve_contributions_calendar(username, base_url):
     """retrieves the GitHub commit calendar data for a username"""
-    base_url = base_url + 'users/' + username
+    base_url = base_url + username
 
     try:
-        url = base_url + '/contributions'
+        url = base_url 
         page = urlopen(url)
     except (HTTPError, URLError) as e:
         print('There was a problem fetching data from {0}'.format(url))
@@ -331,7 +331,7 @@ def main():
     ghe = request_user_input(
         'Enter GitHub URL (leave blank to use {}): '.format(GITHUB_BASE_URL))
 
-    username = request_user_input('Enter your GitHub username: ')
+    username = request_user_input('Enter your GitHub username: aliuwaidi ')
 
     git_base = ghe if ghe else GITHUB_BASE_URL
 
@@ -342,10 +342,10 @@ def main():
     m = calculate_multiplier(max_daily_commits)
 
     repo = request_user_input(
-        'Enter the name of the repository to use by gitfiti: ')
+        'Enter the name of the repository to use by gitfiti: gitfiti ')
 
     offset = request_user_input(
-        'Enter the number of weeks to offset the image (from the left): ')
+        'Enter the number of weeks to offset the image (from the left): 1 ')
 
     offset = int(offset) if offset.strip() else 0
 
